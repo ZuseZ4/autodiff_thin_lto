@@ -1,0 +1,26 @@
+[package]
+name = "foo"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+embed-bitcode=true
+lto = "thin"
+incremental = false
+#panic = "abort"
+codegen-units = 1
+
+[profile.dev]
+embed-bitcode=true
+lto = "thin"
+incremental = false
+#panic = "abort"
+codegen-units = 1
+
+[dependencies]
+simple_dep = { git = "https://github.com/ZuseZ4/simple_dep/", version = "0.1.0" }
+#simple_dep = { path = "../simple_dep" }
+#simple_dep = { git = "https://github.com/ZuseZ4/simple_dep" }
+#num-dual = "0.12.1"
